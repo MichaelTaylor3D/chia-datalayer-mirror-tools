@@ -39,7 +39,12 @@ const deleteAllOwnedMirrors = async (storeId) => {
 
 const doesMirrorExist = async (storeId, url) => {
   const mirrors = await getOwnedMirrors(storeId);
-  return mirrors.some((mirror) => mirror.url === url && mirror.ours === true);
+  return mirrors.some(
+    (mirror) =>
+      mirror.urls.includes(url) &&
+      mirror.launcher_id === storeId &&
+      mirror.ours === true
+  );
 };
 
 const addMirror = async (storeId, url) => {
@@ -80,11 +85,13 @@ const addMirrorForCurrentHost = async (storeId) => {
   }
 
   return addMirror(storeId, url);
-}
+};
 
 const deleteMirror = async (storeId, url) => {
   const mirrors = await getOwnedMirrors(storeId);
-  const mirror = mirrors.find((mirror) => mirror.url === url && mirror.ours === true);
+  const mirror = mirrors.find(
+    (mirror) => mirror.url === url && mirror.ours === true
+  );
 
   if (!mirror) {
     console.log(`Mirror ${url} does not exist for store ${storeId}`);
