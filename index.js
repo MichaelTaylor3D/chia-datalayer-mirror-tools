@@ -3,7 +3,7 @@ const { getChiaConfig } = require("chia-config-loader");
 const defaultConfig = require("./defaultConfig");
 const { publicIpv4 } = require("./ip-utils");
 
-const config = defaultConfig;
+let config = defaultConfig;
 let datalayer = Datalayer.rpc(defaultConfig);
 
 const configure = (newConfig) => {
