@@ -31,6 +31,8 @@ const deleteAllOwnedMirrors = async (storeId) => {
       console.error(
         `Failed to delete mirror ${mirror.coin_id} for store ${storeId}`
       );
+    } else {
+      console.log(`Deleted mirror ${mirror.coin_id} for store ${storeId}`);
     }
   }
 };
@@ -55,6 +57,8 @@ const addMirror = async (storeId, url) => {
   if (response.success === false) {
     console.error(`Failed to add mirror ${url} for store ${storeId}`);
   }
+
+  return response;
 };
 
 const addMirrorForCurrentHost = async (storeId) => {
@@ -94,6 +98,8 @@ const deleteMirror = async (storeId, url) => {
   if (response.success === false) {
     console.error(`Failed to delete mirror ${url} for store ${storeId}`);
   }
+
+  return response;
 };
 
 module.exports = {
