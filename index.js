@@ -49,6 +49,7 @@ const addMirror = async (storeId, url) => {
   const response = await datalayer.addMirror({
     id: storeId,
     urls: [url],
+    amount: config.default_mirror_coin_amount,
   });
 
   if (response.success === false) {
