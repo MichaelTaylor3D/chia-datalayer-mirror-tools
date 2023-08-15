@@ -16,7 +16,7 @@ const getOwnedMirrors = async (storeId) => {
     id: storeId,
   });
 
-  return response.mirrors.filter((mirror) => mirror.ours === false);
+  return response.mirrors.filter((mirror) => mirror.ours === true);
 };
 
 const deleteAllOwnedMirrors = async (storeId) => {
