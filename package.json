@@ -1,6 +1,6 @@
 {
   "name": "chia-datalayer-mirror-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Abstractions to make adding and deleting mirrors easier",
   "main": "index.js",
   "scripts": {
