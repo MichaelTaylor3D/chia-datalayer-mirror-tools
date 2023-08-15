@@ -50,7 +50,7 @@ const doesMirrorExist = async (storeId, url) => {
 const addMirror = async (storeId, url) => {
   if (await doesMirrorExist(storeId, url)) {
     console.log(`Mirror ${url} already exists for store ${storeId}`);
-    return;
+    return { success: false}
   }
 
   const response = await datalayer.addMirror({
@@ -95,7 +95,7 @@ const deleteMirror = async (storeId, url) => {
 
   if (!mirror) {
     console.log(`Mirror ${url} does not exist for store ${storeId}`);
-    return;
+    return { success: false }
   }
 
   const response = await datalayer.deleteMirror({
