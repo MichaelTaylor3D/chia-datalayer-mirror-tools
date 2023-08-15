@@ -1,0 +1,22 @@
+{
+  "name": "chia-root-resolver",
+  "version": "1.0.0",
+  "description": "Small utility to return the Chia Root, uses CHIA_ROOT if it exists, otherwise defaults to default Chia Root",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelTaylor3D/chia-root-resolver.git"
+  },
+  "keywords": [
+    "chia-blockchain"
+  ],
+  "author": "Michael Taylor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichaelTaylor3D/chia-root-resolver/issues"
+  },
+  "homepage": "https://github.com/MichaelTaylor3D/chia-root-resolver#readme"
+}

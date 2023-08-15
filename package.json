@@ -1,0 +1,26 @@
+{
+  "name": "chia-datalayer-mirror-tools",
+  "version": "1.0.0",
+  "description": "Abstractions to make adding and deleting mirrors easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelTaylor3D/chia-datalayer-mirror-tools.git"
+  },
+  "keywords": [
+    "chia-blockchain"
+  ],
+  "author": "Michael Taylor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichaelTaylor3D/chia-datalayer-mirror-tools/issues"
+  },
+  "homepage": "https://github.com/MichaelTaylor3D/chia-datalayer-mirror-tools#readme",
+  "dependencies": {
+    "chia-config-loader": "^1.0.0",
+    "chia-datalayer": "^1.0.0"
+  }
+}
