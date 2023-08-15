@@ -62,6 +62,18 @@ const addMirrorForCurrentHost = async (storeId) => {
   const port = chiaConfig.data_layer.host_port;
   const url = `https://${ip}:${port}`;
 
+  if (!storeId) {
+    throw new Error("Store ID is required");
+  }
+
+  if (!ip) {
+    throw new Error("Failed to get public IP");
+  }
+
+  if (!port) {
+    throw new Error("Failed to get datalayer port from chia config file");
+  }
+
   return addMirror(storeId, url);
 }
 
