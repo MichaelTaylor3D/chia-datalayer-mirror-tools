@@ -21,6 +21,6 @@
   "homepage": "https://github.com/MichaelTaylor3D/chia-datalayer-mirror-tools#readme",
   "dependencies": {
     "chia-config-loader": "^1.0.0",
-    "chia-datalayer": "^1.0.0"
+    "chia-datalayer": "^2.0.0"
   }
 }

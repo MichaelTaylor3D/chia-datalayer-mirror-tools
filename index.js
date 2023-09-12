@@ -4,11 +4,11 @@ const defaultConfig = require("./defaultConfig");
 const { publicIpv4 } = require("./ip-utils");
 
 let config = defaultConfig;
-let datalayer = Datalayer.rpc(defaultConfig);
+let datalayer = new Datalayer(defaultConfig);
 
 const configure = (newConfig) => {
   config = { ...config, ...newConfig };
-  datalayer = Datalayer.rpc(config);
+  datalayer = new Datalayer(config);
 };
 
 const getOwnedMirrors = async (storeId) => {
