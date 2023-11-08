@@ -70,7 +70,7 @@ const addMirrorForCurrentHost = async (storeId) => {
   const chiaConfig = await getChiaConfig();
   const ip = await publicIpv4();
   const port = chiaConfig.data_layer.host_port;
-  const url = `https://${ip}:${port}`;
+  const url = `http://${ip}:${port}`;
 
   if (!storeId) {
     throw new Error("Store ID is required");
