@@ -36,7 +36,7 @@ const type = {
       servers,
       question,
     })),
-    httpsUrls: ["https://icanhazip.com/", "https://api.ipify.org/"],
+    httpsUrls: ["https://api.ipify.org/"],
   },
 };
 
