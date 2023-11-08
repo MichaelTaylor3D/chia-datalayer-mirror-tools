@@ -2,6 +2,7 @@ const Datalayer = require("chia-datalayer");
 const { getChiaConfig } = require("chia-config-loader");
 const defaultConfig = require("./defaultConfig");
 const { publicIpv4 } = require("./ip-utils");
+const { format } = require("url");
 
 let config = defaultConfig;
 let datalayer = new Datalayer(defaultConfig);
@@ -70,7 +71,17 @@ const addMirrorForCurrentHost = async (storeId) => {
   const chiaConfig = await getChiaConfig();
   const ip = await publicIpv4();
   const port = chiaConfig.data_layer.host_port;
-  const url = `http://${ip}:${port}`;
+
+  // Check if 'ip' is an IPv6 address
+  const isIPv6 = ip.includes(":");
+
+  // Construct the URL with the appropriate format based on IP version
+  const url = format({
+    protocol: isIPv6 ? "http:" : "http:",
+    slashes: true,
+    hostname: isIPv6 ? `[${ip}]` : ip,
+    port: port,
+  });
 
   if (!storeId) {
     throw new Error("Store ID is required");
