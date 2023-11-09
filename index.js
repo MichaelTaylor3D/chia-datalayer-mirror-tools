@@ -87,6 +87,8 @@ const addMirrorForCurrentHost = async (storeId, forceIp4 = false) => {
     console.log(
       `Detected IPv6 address ${ip}. Do use this as a DataLayer mirror, make sure you go to ~/.chia/mainnet/config/config.yaml and change the value of ip_host to say ip_host: ''`
     );
+  } else {
+    console.log(`Creating Mirror For IPv4 address ${ip}`);
   }
 
   if (!storeId) {
