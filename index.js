@@ -67,7 +67,7 @@ const addMirror = async (storeId, url) => {
   return response;
 };
 
-const addMirrorForCurrentHost = async (storeId, forceIp4 = false) => {
+const addMirrorForCurrentHost = async (storeId, forceIp4 = true) => {
   const chiaConfig = await getChiaConfig();
   const ip = await publicIpv4({ forceIp4 });
   const port = chiaConfig.data_layer.host_port;
